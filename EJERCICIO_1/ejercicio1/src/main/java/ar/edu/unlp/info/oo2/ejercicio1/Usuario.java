@@ -13,6 +13,11 @@ public class Usuario {
 		return screenName;
 	}
 
+        public List<Tweet> eliminarTweets(){
+                this.tweets.removeAll();
+                return null;
+        }
+
 	public Tweet tweetear(String t) {
 		if(t.length() > 0 && t.length() <= 140) {
 		      Tweet tw = new Tweet(t, this);
