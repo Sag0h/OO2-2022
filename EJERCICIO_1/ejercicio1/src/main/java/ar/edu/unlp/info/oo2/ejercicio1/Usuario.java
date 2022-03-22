@@ -2,9 +2,11 @@ package ar.edu.unlp.info.oo2.ejercicio1;
 
 public class Usuario {
 	private String screenName;
-	
+	private List<Tweet> tweets;
+
 	public Usuario(String name) {
 		this.screenName = name;
+                this.tweets = new ArrayList<Tweet>();
 	}
 	
 	public String getScreenName() {
@@ -13,13 +15,19 @@ public class Usuario {
 
 	public Tweet tweetear(String t) {
 		if(t.length() > 0 && t.length() <= 140) {
-			return new Tweet(this ,t);
+		      Tweet tw = new Tweet(this, t);
+                      this.tweets.add(tw);
+                      return tw;
+
 		}
+
 		return null;
 	}
 	
 	public Tweet retweetear(Tweet t) {
-		return new Tweet(this, t);
+                Tweet tw = new Tweet(this, t);
+                this.tweets.add(tw);
+		return tw;
 	}
 	
 }
