@@ -2,18 +2,11 @@ package ar.edu.unlp.info.oo2.ejercicio1;
 
 public class Tweet {
 	private String text;
-	private Usuario usuario;
 	private Tweet tweetOrigen;
+
 	
-	public Tweet(Usuario u, String text) {
+	public Tweet(String text, Tweet to) {
 		this.text = text;
-		this.usuario = u;
-		this.tweetOrigen = this;
-	}
-	
-	public Tweet(Usuario u, Tweet to) {
-		this.text = to.getText();
-		this.usuario = u;
 		this.tweetOrigen = to;
 	}
 	
@@ -25,7 +18,4 @@ public class Tweet {
 		return this.text;
 	}
 	
-	public Usuario getUsuario() {
-		return this.usuario;
-	}
 }
