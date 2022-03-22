@@ -15,7 +15,7 @@ public class Usuario {
 
 	public Tweet tweetear(String t) {
 		if(t.length() > 0 && t.length() <= 140) {
-		      Tweet tw = new Tweet(this, t);
+		      Tweet tw = new Tweet(t, this);
                       this.tweets.add(tw);
                       return tw;
 
@@ -24,10 +24,13 @@ public class Usuario {
 		return null;
 	}
 	
-	public Tweet retweetear(Tweet t) {
-                Tweet tw = new Tweet(this, t.getTweetOrigen());
-                this.tweets.add(tw);
-		return tw;
+	public Tweet retweetear(String text, Tweet t) {
+                if(text.length() > 0 && text.length() <= 140) { 
+                        Tweet tw = new Tweet(text, t);
+                        this.tweets.add(tw);
+		        return tw;
+                }
+                return null;
 	}
 	
 }
