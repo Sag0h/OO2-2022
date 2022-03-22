@@ -20,7 +20,10 @@ public class Twitter {
 	}
 	
 	public void eliminarUsuario(String username) {
-		this.usuarios.remove(this.usuarios.stream().filter(u -> u.getScreenName().equals(username)).findFirst().get());
+		Usuario u = this.usuarios.stream().filter(c -> c.getScreenName().equals(username)).findAny().orElse(null);
+		if( u != null ) {
+			this.usuarios.remove(u);
+		}
 	}
 	
 	public Set<Usuario> getUsuarios(){

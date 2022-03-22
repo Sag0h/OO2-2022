@@ -22,10 +22,11 @@ public class TwitterTest {
 		app.registrarUsuario(guido);
 	}
     @Test
-    public void testCantidadDeUsuarios() {
+    public void testCantidadDeUsuariosYEliminar() {
         assertEquals(2, app.getUsuarios().size());
         app.eliminarUsuario(james);
         assertEquals(1, app.getUsuarios().size());
+        app.eliminarUsuario("sag0h");
     }
     
     @Test
