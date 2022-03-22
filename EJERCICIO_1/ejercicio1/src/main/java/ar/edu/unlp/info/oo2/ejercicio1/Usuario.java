@@ -25,7 +25,7 @@ public class Usuario {
 	}
 	
 	public Tweet retweetear(Tweet t) {
-                Tweet tw = new Tweet(this, t);
+                Tweet tw = new Tweet(this, t.getTweetOrigen());
                 this.tweets.add(tw);
 		return tw;
 	}
