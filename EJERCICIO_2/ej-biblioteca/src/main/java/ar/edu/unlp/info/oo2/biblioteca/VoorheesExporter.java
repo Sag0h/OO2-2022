@@ -2,7 +2,7 @@ package ar.edu.unlp.info.oo2.biblioteca;
 
 import java.util.List;
 
-public class VoorheesExporter {
+public class VoorheesExporter implements Exporter{
 
 	private String exportar(Socio socio) {
 		String separator = System.lineSeparator();
