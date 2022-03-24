@@ -1,5 +1,11 @@
 package ar.edu.unlp.info.oo2.biblioteca;
 
+
+import java.util.ArrayList;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,18 +28,21 @@ public class BibliotecaTest {
 	@Test
 	public void testBiblioteca() {
 		System.out.println(biblio.exportarSocios());
-		Assertions.assertEquals("[\n"
-				+ "	{\n"
-				+ "		\"nombre\": \"Arya Stark\",\n"
-				+ "		\"email\": \"needle@stark.com\",\n"
-				+ "		\"legajo\": \"5234-5\"\n"
-				+ "	},\n"
-				+ "	{\n"
-				+ "		\"nombre\": \"Tyron Lannister\",\n"
-				+ "		\"email\": \"tyron@thelannisters.com\",\n"
-				+ "		\"legajo\": \"2345-2\"\n"
-				+ "	}\n"
-				+ "]", biblio.exportarSocios());
+		Object obj = JSONValue.parse(biblio.exportarSocios());
+		JSONArray array = (JSONArray)obj;
+		
+		ArrayList<Socio> arregloprueba = new ArrayList<Socio>();
+		
+		arregloprueba.add(arya);
+		arregloprueba.add(tyron);
+		
+		for(int i = 0; i < array.size(); i++) {
+			JSONObject pos = (JSONObject)array.get(i);
+			Assertions.assertEquals(pos.get("nombre"), arregloprueba.get(i).getNombre());
+			Assertions.assertEquals(pos.get("email"), arregloprueba.get(i).getEmail());
+			Assertions.assertEquals(pos.get("legajo"), arregloprueba.get(i).getLegajo());
+		}
+			
 	}
 	
 }

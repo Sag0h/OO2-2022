@@ -23,11 +23,4 @@ public class Biblioteca {
 		return exporter.exportar(socios);
 	}
 
-	public Exporter getExporter() {
-		return exporter;
-	}
-
-	public void setExporter(Exporter exporter) {
-		this.exporter = exporter;
-	}
 }
