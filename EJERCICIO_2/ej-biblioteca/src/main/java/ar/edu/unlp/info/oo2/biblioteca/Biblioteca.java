@@ -5,11 +5,11 @@ import java.util.List;
 
 public class Biblioteca {
 	private List<Socio> socios;
-	private Exporter exporter;
+	private VoorheesExporter exporter;
 
 	public Biblioteca() {
 		socios = new ArrayList<>();
-		exporter= new JSONsimpleAdapter(); 
+		exporter= new VoorheesExporter(); 
 	}
 
 	public void agregarSocio(Socio socio) {
@@ -22,5 +22,14 @@ public class Biblioteca {
 	public String exportarSocios() {
 		return exporter.exportar(socios);
 	}
+
+	public Exporter getExporter() {
+		return exporter;
+	}
+
+	public void setExporter(VoorheesExporter exporter) {
+		this.exporter = exporter;
+	}
+	
 
 }
