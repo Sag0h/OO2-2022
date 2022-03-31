@@ -26,17 +26,8 @@ public class TopografiaMixta extends Topografia {
 	
 	@Override
 	public boolean equals(Topografia c) {
-		if(this.calcularProporcionAgua() == c.calcularProporcionAgua()) {
-			if(this.getComponentes().size() == c.getComponentes().size()) {
-				for(int i=0; i<this.getComponentes().size(); i++) {
-					if(!(this.getComponentes().get(i).equals(c.getComponentes().get(i)))) {
-						return false;
-					}
-				}
-				return true;
-			}
-		}
-		return false;
+		return this.getComponentes().equals(c.getComponentes());
+	// redefiniendo el equals de object 
 	}
 	
 }
