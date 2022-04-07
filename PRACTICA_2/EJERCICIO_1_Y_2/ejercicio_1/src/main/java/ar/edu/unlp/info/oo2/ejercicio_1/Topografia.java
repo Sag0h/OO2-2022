@@ -20,6 +20,7 @@ public abstract class Topografia {
 		return this.calcularProporcionAgua() == c.calcularProporcionAgua();
 	}
 	
+	@Override
 	public boolean equals(Object o) {
 		return this.equals((Topografia)o);
 	}
