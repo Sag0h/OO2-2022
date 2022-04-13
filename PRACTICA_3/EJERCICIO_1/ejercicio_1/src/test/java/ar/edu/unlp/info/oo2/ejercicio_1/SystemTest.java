@@ -4,6 +4,7 @@
 package ar.edu.unlp.info.oo2.ejercicio_1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -25,12 +26,14 @@ public class SystemTest {
     @Test
     public void testStates() {
     	t1.start();
-    	assertEquals("ar.edu.unlp.info.oo2.ejercicio_1.InProgress",t1.getState().getClass().getName());
-    	assertEquals("ar.edu.unlp.info.oo2.ejercicio_1.Pending", t2.getState().getClass().getName());
+    	assertEquals("InProgress",t1.getState().getName());
+    	assertEquals("Pending", t2.getState().getName());
     	t1.togglePause();
-    	assertEquals("ar.edu.unlp.info.oo2.ejercicio_1.Paused",t1.getState().getClass().getName());
+    	assertEquals("Paused",t1.getState().getName());
+    	t1.togglePause();
+    	assertEquals("InProgress",t1.getState().getName());
     	t1.finish();
-    	assertEquals("ar.edu.unlp.info.oo2.ejercicio_1.Finished",t1.getState().getClass().getName());
+    	assertEquals("Finished",t1.getState().getName());
     }	
     
     @Test
@@ -45,6 +48,11 @@ public class SystemTest {
     
     @Test
     public void testThrows() {
+    	
+    	Exception e = assertThrows(RuntimeException.class, () -> t1.workedTime());
+    	String expectedMessage = "Actual State Pending.";
+    	assertEquals(expectedMessage, e.getMessage());
+    			/*
     	boolean thrown = false;
     	try {
     		t1.workedTime();
@@ -53,20 +61,39 @@ public class SystemTest {
     	}
     	assertTrue(thrown);
     	
+    	*/
+    	
+    	e = assertThrows(RuntimeException.class, () -> t1.togglePause());
+    	expectedMessage = "Actual state is Pending, can't pause.";
+    	assertEquals(expectedMessage, e.getMessage());
+    	
+    	/*
     	try {
     		t1.togglePause();
     	}catch(Exception e) {
     		thrown = true;
     	}
     	assertTrue(thrown);
+    	*/
+    	
+    	t1.start();
     	t1.finish();
+    	
+    	e = assertThrows(RuntimeException.class, () -> t1.togglePause());
+    	expectedMessage = "Actual state is Finished, can't pause.";
+    	assertEquals(expectedMessage, e.getMessage());
+
+    	/*
     	try {
     		t1.togglePause();
     	}catch(Exception e) {
     		thrown = true;
     	}
     	assertTrue(thrown);
+
+    	 */
+
     }
     	
-    
 }
+

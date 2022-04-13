@@ -1,17 +1,27 @@
 package ar.edu.unlp.info.oo2.ejercicio_1;
 
-public interface State {
+public abstract class State {
+	protected String name;
 	
-	public default void start(ToDoItem toDo) {
+	public State(String n) {
+		this.name = n;
+	}
+	
+	public void start(ToDoItem toDo) {
 		
 	}
 	
-	public default void togglePause(ToDoItem toDo) {
-		throw new RuntimeException("Actual state is "+ toDo.getState().getClass().getName() +", can't pause.");
+	public void togglePause(ToDoItem toDo) {
+		throw new RuntimeException("Actual state is "+ this.name +", can't pause.");
 	}
 	
-	public default void finish(ToDoItem toDo) {
+	public void finish(ToDoItem toDo) {
 		
 	}
+
+	public String getName() {
+		return name;
+	}
+
 	
 }

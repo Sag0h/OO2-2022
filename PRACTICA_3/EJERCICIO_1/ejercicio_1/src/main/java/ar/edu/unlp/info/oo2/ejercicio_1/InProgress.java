@@ -1,6 +1,10 @@
 package ar.edu.unlp.info.oo2.ejercicio_1;
 
-public class InProgress implements State {
+public class InProgress extends State {
+
+	public InProgress() {
+		super("InProgress");
+	}
 
 	public void togglePause(ToDoItem t) {
 		t.setState(new Paused());
