@@ -10,6 +10,19 @@ public class File implements FileOO2 {
 	private LocalDate fechaModificacion;
 	private String permisos;
 
+	
+
+	public File(String nombre, String extension, Double tamanio, LocalDate fechaCreacion, LocalDate fechaModificacion,
+			String permisos) {
+		super();
+		this.nombre = nombre;
+		this.extension = extension;
+		this.tamanio = tamanio;
+		this.fechaCreacion = fechaCreacion;
+		this.fechaModificacion = fechaModificacion;
+		this.permisos = permisos;
+	}
+
 	@Override
 	public String prettyPrint() {
 		return "";
