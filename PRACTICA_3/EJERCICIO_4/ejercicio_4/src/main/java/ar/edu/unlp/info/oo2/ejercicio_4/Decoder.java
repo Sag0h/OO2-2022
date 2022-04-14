@@ -48,5 +48,7 @@ public class Decoder {
 		return this.moviesPlayed;
 	}
 	
-	
+	public List<Movie> suggestMovie() {
+		return this.strategy.suggestMovie(this);
+	}
 }
