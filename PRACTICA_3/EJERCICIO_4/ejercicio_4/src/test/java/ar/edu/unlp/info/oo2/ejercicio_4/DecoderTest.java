@@ -43,8 +43,8 @@ public class DecoderTest {
  	}
     
  	@Test
-    public void testNewestStrategy() {
-    	decoder.setSuggestionStrategy(new NewestStrategy());
+    public void testNoveltyStrategy() {
+    	decoder.setSuggestionStrategy(new NoveltyStrategy());
     	assertEquals("Dunkirk", decoder.suggestMovies().get(0).getTitle());
     	assertEquals("Capitan America", decoder.suggestMovies().get(1).getTitle());
     	assertEquals("Iron Man", decoder.suggestMovies().get(2).getTitle());

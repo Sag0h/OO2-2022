@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class NewestStrategy implements SuggestionStrategy {
+public class NoveltyStrategy implements SuggestionStrategy {
 
 	@Override
 	public List<Movie> suggestMovies(Decoder d) {
