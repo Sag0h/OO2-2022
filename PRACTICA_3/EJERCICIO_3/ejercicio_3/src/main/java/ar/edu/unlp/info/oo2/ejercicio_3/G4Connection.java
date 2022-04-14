@@ -16,7 +16,7 @@ public class G4Connection {
 	};
 	
 	public String transmit(String data, Integer crc) {
-		return data;
+		return "transmitting data";
 	}
 	
 }

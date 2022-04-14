@@ -20,18 +20,18 @@ public class DeviceTest {
 	
 	@Test
 	public void sendTest() {
-		assertEquals("Datos", d.send("Datos"));
+		assertEquals("transmitting data", d.send("Datos"));
 	}
 
 	@Test 
 	public void conectarConTest() {
-		assertEquals(d.conectarCon(new WifiConn()), "WIFI SYMB");
-		assertEquals(d.conectarCon(new G4Adapter()), "4G SYMB");
+		assertEquals(d.conectarCon(new WifiConn()), "connecting method changed");
+		assertEquals(d.conectarCon(new G4Adapter()), "connecting method changed");
 	}
 	
 	@Test
 	public void configurarCRCTest() {
-		// ni puta idea idea
+		assertEquals(d.configurarCRC(new CRC32_Calculator()), "crc config changed");
 	}
 	
 }

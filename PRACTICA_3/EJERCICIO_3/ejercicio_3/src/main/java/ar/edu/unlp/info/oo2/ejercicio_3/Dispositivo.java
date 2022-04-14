@@ -16,7 +16,8 @@ public class Dispositivo {
 	public String conectarCon(Connection c) {
 		this.connection = c;
 		this.ringer.ring();
-		return this.display.showBanner(c.pict());
+		this.display.showBanner(c.pict());
+		return "connecting method changed";
 	}
 	
 	public void useWifi() {
@@ -43,8 +44,9 @@ public class Dispositivo {
 		this.calculator = new CRC16_Calculator();
 	}
 	
-	public void configurarCRC(CalculatorStrategy crc) {
+	public String configurarCRC(CalculatorStrategy crc) {
 		this.calculator = crc;
+		return "crc config changed";
 	}
 	
 

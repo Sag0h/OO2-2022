@@ -13,7 +13,7 @@ public class WifiConn implements Connection {
 	
 	@Override
 	public String sendData(String data, Integer crc) {
-		return data;
+		return "transmitting data";
 	}
 
 	@Override
