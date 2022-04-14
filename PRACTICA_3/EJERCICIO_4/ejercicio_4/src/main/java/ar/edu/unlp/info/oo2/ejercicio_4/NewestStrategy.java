@@ -7,11 +7,8 @@ import java.util.stream.Collectors;
 public class NewestStrategy implements SuggestionStrategy {
 
 	@Override
-	public List<Movie> suggestMovie(Decoder d) {
-		List<Movie> moviesNotPlayed = d.getMovies().stream().filter(m -> !(d.getPlayedMovies().contains(m))).toList();
+	public List<Movie> suggestMovies(Decoder d) {
+		List<Movie> moviesNotPlayed = d.getMovies().stream().filter(m -> !(d.getPlayedMovies().contains(m))).collect(Collectors.toList());
 		return moviesNotPlayed.stream().sorted(Comparator.comparing(Movie::getReleaseYear).reversed()).limit(3).collect(Collectors.toList());
 	}
-
-
-
 }

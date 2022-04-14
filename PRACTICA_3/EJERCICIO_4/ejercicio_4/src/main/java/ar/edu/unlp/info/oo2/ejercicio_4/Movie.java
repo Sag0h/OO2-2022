@@ -7,17 +7,18 @@ import java.util.List;
 public class Movie {
 	private String title;
 	private Year releaseYear;
-	private float score;
+	private double score;
 	private List<Movie> similarMovies;
 	
-	public Movie(String t, Year y, float s, List<Movie> similar) {
+	
+	public Movie(String t, Year y, double s, ArrayList<Movie> similar) {
 		this.title = t;
 		this.releaseYear = y;
 		this.score = s;
 		this.similarMovies = similar;
 	}
 	
-	public Movie(String t, Year y, float s) {
+	public Movie(String t, Year y, double s) {
 		this.title = t;
 		this.releaseYear = y;
 		this.score = s;
@@ -40,11 +41,11 @@ public class Movie {
 		this.releaseYear = releaseYear;
 	}
 
-	public float getScore() {
+	public double getScore() {
 		return score;
 	}
 
-	public void setScore(float score) {
+	public void setScore(double score) {
 		this.score = score;
 	}
 	
@@ -53,7 +54,9 @@ public class Movie {
 	}
 	
 	public void addSimilarMovie(Movie m) {
-		this.similarMovies.add(m);
+		if(!this.similarMovies.contains(m)) {
+			this.similarMovies.add(m);			
+			m.addSimilarMovie(this);
+		}
 	}
-	
 }
