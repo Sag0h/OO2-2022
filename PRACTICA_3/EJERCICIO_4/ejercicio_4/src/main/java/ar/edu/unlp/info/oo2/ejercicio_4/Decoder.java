@@ -51,4 +51,8 @@ public class Decoder {
 	public List<Movie> suggestMovies() {
 		return this.strategy.suggestMovies(this);
 	}
+	
+	public boolean watchedMovie(Movie m) {
+		return this.moviesPlayed.contains(m);
+	}
 }
