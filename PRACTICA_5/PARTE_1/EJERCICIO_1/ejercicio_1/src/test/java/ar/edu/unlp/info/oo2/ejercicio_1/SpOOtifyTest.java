@@ -12,6 +12,10 @@ public class SpOOtifyTest {
 	
 	SpOOtify spoti = new SpOOtify();
 	
+	Artist dualipa = new Artist("Dua Lipa"); 
+	Artist eminem = new Artist("Eminem");
+	Artist thecure = new Artist("The cure");
+	
 	@BeforeEach
 	void setUp() throws Exception{
 		
@@ -30,7 +34,7 @@ public class SpOOtifyTest {
 		a2.addSong(s3);
 		a2.addSong(s4);
 
-		Artist eminem = new Artist("Eminem");
+		
 		eminem.addAlbum(a1);
 		eminem.addAlbum(a2);
 
@@ -39,7 +43,7 @@ public class SpOOtifyTest {
 		Song st1 = new Song("High");
 		Song st2 = new Song("Friday im in love");
 		Album tc1 = new Album("Wish"); 
-		Artist thecure = new Artist("The cure");
+		
 		tc1.addSong(st1);
 		tc1.addSong(st2);
 		thecure.addAlbum(tc1);
@@ -49,7 +53,7 @@ public class SpOOtifyTest {
 		Song sd1 = new Song("Physical");
 		Song sd2 = new Song("Levitating");
 		Album d1 = new Album("Future nostalgia");
-		Artist dualipa = new Artist("Dua Lipa"); 
+
 		d1.addSong(sd1);
 		d1.addSong(sd2);
 		dualipa.addAlbum(d1);
@@ -76,6 +80,12 @@ public class SpOOtifyTest {
 		assertEquals(1, spoti.search("Stan".toLowerCase()).size());
 	}
 
+	@Test
+	public void searchDoubleSong() {
+		dualipa.getAlbums().get(0).addSong(new Song("Stan"));
+		assertEquals(2, spoti.search("Stan".toLowerCase()).size());
+	}
+	
 	@Test
 	public void searchNotFound(){
 		assertEquals(0, spoti.search("Metallica".toLowerCase()).size());

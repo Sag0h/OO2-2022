@@ -19,6 +19,10 @@ public class Artist extends Content {
 		this.albums = albums;
 	}
 
+	public List<Album> getAlbums(){
+		return this.albums;
+	}
+	
 	public void addAlbum(Album a){
 		this.albums.add(a);
 	}
