@@ -16,7 +16,7 @@ public class SpOOtify {
 	}
 
 	public List<Song> search(String str) {
-		return this.artists.stream().flatMap(a -> a.search(str).stream()).collect(Collectors.toList());
+		return this.artists.stream().flatMap(a -> a.search(str.toLowerCase()).stream()).collect(Collectors.toList());
 	}
 
 }

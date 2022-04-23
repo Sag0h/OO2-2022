@@ -67,7 +67,7 @@ public class SpOOtifyTest {
 	
 	@Test
 	public void searchArtist(){
-		assertEquals(2,spoti.search("Dua Lipa".toLowerCase()).size());
+		assertEquals(2,spoti.search("Dua lipa").size());
 	}
 	
 	@Test
@@ -77,18 +77,18 @@ public class SpOOtifyTest {
 
 	@Test
 	public void searchSingleSong(){
-		assertEquals(1, spoti.search("Stan".toLowerCase()).size());
+		assertEquals(1, spoti.search("Stan").size());
 	}
 
 	@Test
 	public void searchDoubleSong() {
 		dualipa.getAlbums().get(0).addSong(new Song("Stan"));
-		assertEquals(2, spoti.search("Stan".toLowerCase()).size());
+		assertEquals(2, spoti.search("stan").size());
 	}
 	
 	@Test
 	public void searchNotFound(){
-		assertEquals(0, spoti.search("Metallica".toLowerCase()).size());
+		assertEquals(0, spoti.search("Metallica").size());
 	}
 
 	

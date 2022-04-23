@@ -11,7 +11,7 @@ public class Song extends Content{
 
 	public List<Song> search(String s) {
 		List<Song> l = new ArrayList<Song>();
-		if(this.getName().contains(s)) {
+		if(this.isInOrEqual(s)) {
 			l.add(this);
 		}
 		return l;
