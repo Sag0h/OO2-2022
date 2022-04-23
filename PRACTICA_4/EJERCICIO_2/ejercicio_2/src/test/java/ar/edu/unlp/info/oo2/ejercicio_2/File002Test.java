@@ -42,6 +42,6 @@ public class File002Test {
     	FileOO2 e = new DecoratorExtension(f);
     	FileOO2 n = new DecoratorName(e);
     	FileOO2 p = new DecoratorPermisos(n);
-    	assertEquals("lectura - pip - .txt - 64.0", p.prettyPrint());	
+    	assertEquals("lgectura - pip - .txt - 64.0", p.prettyPrint());	
     }
 }
