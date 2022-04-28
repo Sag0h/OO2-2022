@@ -8,6 +8,11 @@ public class PersoonaFisica extends Persoona{
 		this.dni = dni;
 	}
 	
+	public PersoonaFisica(String nombre, String tipoDeCliente, String dni) {
+		super(nombre, tipoDeCliente);
+		this.dni = dni;
+	}
+	
 	public String getDni() {
 		return dni;
 	}

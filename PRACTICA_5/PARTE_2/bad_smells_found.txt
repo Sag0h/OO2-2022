@@ -1,0 +1,7 @@
+1. No Encapsulamiento
+2. Nombre de variables confusas o poco claras
+3. Clases que solo tienen datos y sus accesors (Llamada, Persoona, GuiaTelefonica)
+4. Metodos muy largos en Persoonal
+5. Hay que delegar los metodos / redistribuirlos, ademas tienen muchos if else
+6. Especificamente en la clase Persoonal que agregarUnNumero en la guia telefonica si este no existe, deberia delegar la responsabilidad a guia telefonica.
+7. Para solucionar los if else se puede crear una gerarquia de clases polimorfica para los tipos de clientes.

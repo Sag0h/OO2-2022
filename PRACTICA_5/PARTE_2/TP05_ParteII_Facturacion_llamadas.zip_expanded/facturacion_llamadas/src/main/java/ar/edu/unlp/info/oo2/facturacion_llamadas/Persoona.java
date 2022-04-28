@@ -19,6 +19,12 @@ public abstract class Persoona {
 		this.llamadas = new ArrayList<Llamada>();
 	}
 	
+	public Persoona(String nombre, String tipoDeCliente) {
+		this.nombreYApellido = nombre;
+		this.tipoDeCliente = tipoDeCliente;
+		this.llamadas = new ArrayList<Llamada>();
+	}
+	
 	public void agregarLlamada(Llamada llamada) {
 		this.llamadas.add(llamada);
 	}
@@ -52,6 +58,9 @@ public abstract class Persoona {
 		return sistema;
 	}
 
+	public void setSistema(Persoonal sistema) {
+		this.sistema = sistema;
+	}
 	
 	public double getDescuento() {
 		return 0;

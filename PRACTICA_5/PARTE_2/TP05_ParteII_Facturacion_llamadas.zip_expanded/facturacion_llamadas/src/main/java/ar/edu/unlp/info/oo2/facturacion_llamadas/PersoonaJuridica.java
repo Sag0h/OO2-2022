@@ -8,6 +8,11 @@ public class PersoonaJuridica extends Persoona{
 		this.cuit = cuit;
 	}
 
+	public PersoonaJuridica(String nombre, String tipoDeCliente, String cuit) {
+		super(nombre, tipoDeCliente);
+		this.cuit = cuit;
+	}
+	
 	public String getCuit() {
 		return cuit;
 	}

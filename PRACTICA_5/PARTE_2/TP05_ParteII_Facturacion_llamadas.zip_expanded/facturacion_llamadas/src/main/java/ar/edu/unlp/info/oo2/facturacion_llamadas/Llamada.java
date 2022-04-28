@@ -1,24 +1,24 @@
 package ar.edu.unlp.info.oo2.facturacion_llamadas;
 
-public abstract class Llamada {
-	protected String tipoDeLlamada;
+public class Llamada {
+	private TipoDeLlamada tipoDeLlamada;
 	private String emisor;
 	private String remitente;
 	private int duracion;
 	
 	
-	public Llamada(String tipoDeLLamada, String emisor, String remitente, int dur) {
+	public Llamada(TipoDeLlamada tipoDeLLamada, String emisor, String remitente, int dur) {
 		this.tipoDeLlamada = tipoDeLLamada;
 		this.emisor = emisor;
 		this.remitente= remitente;
 		this.duracion = dur;
 	}
 
-	public String getTipoDeLlamada() {
+	public TipoDeLlamada getTipoDeLlamada() {
 		return tipoDeLlamada;
 	}
 
-	public void setTipoDeLlamada(String tipoDeLlamada) {
+	public void setTipoDeLlamada(TipoDeLlamada tipoDeLlamada) {
 		this.tipoDeLlamada = tipoDeLlamada;
 	}
 	public void setEmisor(String emisor) {
@@ -43,6 +43,8 @@ public abstract class Llamada {
 		this.duracion = duracion;
 	}
 
-	public abstract double calcularMonto();
+	public double calcularMonto() {
+		return this.tipoDeLlamada.calcularMonto(this.getDuracion());
+	};
 	
 }
