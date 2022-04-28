@@ -42,12 +42,8 @@ public class Persoonal {
 		this.llamadas.add(llamada);
 		persona1.agregarLlamada(llamada);
 		return llamada;	
-		
 	}
 	
-	public double calcularMontoTotalLlamadas(Persoona p) {
-		return p.calcularMontoTotalLlamadas();
-	}
 
 	public int cantidadDeUsuarios() {
 		return personas.size();

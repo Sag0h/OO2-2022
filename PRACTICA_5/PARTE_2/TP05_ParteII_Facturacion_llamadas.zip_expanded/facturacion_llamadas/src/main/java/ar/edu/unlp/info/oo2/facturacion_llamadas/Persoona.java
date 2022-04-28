@@ -66,14 +66,8 @@ public abstract class Persoona {
 		return 0;
 	}
 
-	public double calcularMontoTotalLlamadas() {
-		double total = 0;
-		for(Llamada l: this.getListaDeLlamadas()) {
-			total += l.calcularMonto() - (l.calcularMonto() * getDescuento());
-		}
-		return total;
-		
-		//return this.getListaDeLlamadas().stream().mapToDouble(l -> (l.calcularMonto() - (l.calcularMonto() * this.getDescuento()))).sum();
+	public double calcularMontoTotalLlamadas() {	
+		return this.getListaDeLlamadas().stream().mapToDouble(l -> (l.calcularMonto() - (l.calcularMonto() * this.getDescuento()))).sum();
 	};
 	
 }
