@@ -5,14 +5,14 @@
 2.3 se deberia calcular los promedios en otro metodo y este usarlo para imprimir nomas.
 
 3.1 deberia haber una jerarquia de clases, en la que cada tipo de empleado herede el comportamiento y las variables en comun, y lo haga cada cual a su manera. Se podria aplicar template method 
-ya que sueldo() hace lo mismo en las 3 clases de distinta forma.
+ya que sueldo() hace lo mismo en las 3 clases de distinta forma. ademas no esta usando encapsulamiento todas las varibles de instancia son publicas
 
 3.2 el incrementar y el decrementar deberian delegarse a la clase jugador, ademas de que no esta encapsulando las variables 
 
-3.3 lo modularizaria mas para tener un metodo que me devuelva los post filtrando para que no esten los del usuario, y otro metodo que ordene.
+3.3 lo modularizaria mas para tener un metodo que me devuelva los post filtrando para que no esten los del usuario, y otro metodo que ordene y otro que filtre los x cant.
 
 3.4 el calculo de cant*precio_unidad de cada producto lo podria hacer la clase itemCarrito
 
 3.5 Cliente deberia delegar el getDireccionFormateada a Direccion
 
-3.6 Se podria aplicar un Strategy Pattern Donde cada tipo de subscripcion implemente una interfaz "TipoDeSubscripcion" y que en vez de tener tantos if anidados, le mande un mensaje y el tipo se haga cargo del calculo
+3.6 Se podria aplicar una gerarquia de clases donde cada tipo de subscripcion implemente una interfaz "TipoDeSubscripcion" y que en vez de tener tantos if anidados, le mande un mensaje y el tipo se haga cargo del calculo

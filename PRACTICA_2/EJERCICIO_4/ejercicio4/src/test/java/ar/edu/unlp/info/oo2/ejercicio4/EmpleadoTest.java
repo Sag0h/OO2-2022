@@ -10,9 +10,9 @@ import org.junit.jupiter.api.Test;
 
 public class EmpleadoTest {
 	
-	Temporario james;
-	Pasante guido;
-	Planta julia;
+	Empleado james;
+	Empleado guido;
+	Empleado julia;
 	
 	@BeforeEach
 	void setUp() throws Exception {

@@ -5,3 +5,11 @@
 5. Hay que delegar los metodos / redistribuirlos, ademas tienen muchos if else
 6. Especificamente en la clase Persoonal que agregarUnNumero en la guia telefonica si este no existe, deberia delegar la responsabilidad a guia telefonica.
 7. Para solucionar los if else se puede crear una gerarquia de clases polimorfica para los tipos de clientes.
+
+
+1. Duplicate Code
+2. Large Class
+3. Long Methods
+4. Data Classes
+5. Feature Envy
+6. Switch Statements
