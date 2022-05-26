@@ -23,7 +23,6 @@ public class DatabaseAccessProxyTest {
     @BeforeAll
     static void configLogger() {
     		LogManager.getLogManager().reset();
-    		Logger.getLogger("app.main").setUseParentHandlers(false);
 			Handler consoleHandler = new ConsoleHandler();
 			consoleHandler.setFormatter(new ShoutingSimpleFormatter());
 			Logger.getLogger("app.main").addHandler(consoleHandler);
