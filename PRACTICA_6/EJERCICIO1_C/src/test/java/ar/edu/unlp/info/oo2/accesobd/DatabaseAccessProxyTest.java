@@ -3,15 +3,52 @@ package ar.edu.unlp.info.oo2.accesobd;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class DatabaseAccessProxyTest {
     DatabaseAccessProxy proxy;
     DatabaseAccess database;
+    
+    @BeforeAll
+    static void configLogger() {
+    		LogManager.getLogManager().reset();
+    		Logger.getLogger("app.main").setUseParentHandlers(false);
+			Handler consoleHandler = new ConsoleHandler();
+			consoleHandler.setFormatter(new ShoutingSimpleFormatter());
+			Logger.getLogger("app.main").addHandler(consoleHandler);
+			
+			
+			try {
+				Handler fileHandler = new FileHandler("output_data/mylogs.json");
+				fileHandler.setFormatter(new JSONFormatter());
+				Logger.getLogger("app.main").addHandler(fileHandler);
+			} catch (SecurityException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			Handler mailHandler = new MailHandler("example@logger.com", "destination@mail.com");
+			mailHandler.setFormatter(new ShoutingSimpleFormatter());
+			Logger.getLogger("app.main").addHandler(mailHandler);
+			
+			FilterHandler filterHandler = new FilterHandler(mailHandler);
+			filterHandler.addWordToFilter("database");
+			Logger.getLogger("app.main").addHandler(filterHandler);
+    			
+    }
+   
     
     @BeforeEach
     void setUp() throws Exception {
