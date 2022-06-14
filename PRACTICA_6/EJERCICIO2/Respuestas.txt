@@ -1,0 +1,56 @@
+Responda las preguntas correspondientes al ejercicio de plantillas y herencia (que a continuación se copian):
+¿Qué debo hacer si aparece una nueva fuente de energía (por ejemplo, paneles solares con baterías)?
+ ¿Cuántas y cuáles clases debo agregar en caso de querer todas las variantes de robots posibles para este nuevo
+  tipo de fuente de energía?
+
+  con herencia tengo que crear mas clases porque para cada combinacion de armas y movilidad hay que crear una con esta fuente
+  de energia.
+  
+  ¿Puedo cambiarle, a un robot existente, el sistema de armas sin tener que instanciar el robot de nuevo?
+  
+  con herencia no. con composicion si.
+  
+  ¿Dónde almacenaría usted el nivel de carga de la batería? ¿Qué implicaría eso si antes de disparar el 
+  láser hay que garantizar que la fuente de energía puede satisfacer el consumo del arma?
+  
+  con herencia tengo que agregar la carga de bateria a cada tipo de robot, eso implica que se repita codigo en los que tienen
+  la misma fuente de energia
+  
+  Responda las preguntas correspondientes al ejercicio de plantillas y composición (que a continuación se copian):
+  
+  ¿Qué debo hacer si aparece una nueva fuente de locomoción (por ejemplo, motor con ruedas con tracción 4x4)? 
+  ¿Cuántas y cuáles clases debo agregar en caso de querer todas las variantes de robots 
+  posibles para este nuevo tipo de sistema de locomoción?
+  
+  con composicion simplemente creo una clase para el tipo de locomocion e instancio un robot y le seteo ese sistema de locomo-
+  cion. por herencia habria q crear las distintas clases por cada combinacion
+  
+ ¿Puedo cambiarle, a un robot existente, el sistema de armas sin tener que instanciar el robot de nuevo?
+ con herencia no, con composicion si.
+ 
+ ¿Dónde almacenaría usted el nivel de carga de la batería? ¿Qué implicaría eso si antes de disparar el láser hay
+  que garantizar que la fuente de energía puede satisfacer el consumo del arma?
+  
+  por composicion en el sistema de energia, eso implicaria que cuando quierda disparar el laser tiene que mandarle un mensaje
+  de consulta al sistema de energia.
+  
+  Explique las ventajas y desventajas de las dos formas de extensión del framework (herencia y composición).
+  
+  Herencia:
+  Desventajas: 
+  - no se puede cambiar las partes del robot en ejecucion.
+  - muchas clases por cada combinacion
+  
+  Ventajas:
+  - conoce todos los atributos asique no se debe mandar parametros
+  
+  Composicion:
+  Desventajas:
+  - No se conocen los atributos, se deben mandar parametros.
+  - muchos mensajes entre objetos.
+  
+  Ventajas:
+  - Menos clases en problemas con muchas conbinaciones
+  - Se pueden cambiar las partes (composiciones) en tiempo de ejecucion
+  - Clases mas compactas
+  - Mejor delegacion de tareas
