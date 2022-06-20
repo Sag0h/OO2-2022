@@ -5,8 +5,8 @@ public class DebitoGatewayAdapter implements GatewayAdapter {
 	private DebitoGateway gateway = new DebitoGateway();
 	@Override
 	public boolean pagar(Cliente cliente, double monto) {
-		if(gateway.autorizarMontoConCBU(monto, "123").isEmpty()) {
-			gateway.pagarMontoConCBU(monto, "123");
+		if(gateway.autorizarMontoConCBU(monto, cliente.getCBU()).isEmpty()) {
+			gateway.pagarMontoConCBU(monto, cliente.getCBU());
 			return true;
 		}
 		return false;
