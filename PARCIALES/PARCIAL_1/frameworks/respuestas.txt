@@ -1,0 +1,5 @@
+1. Si, se realiza mediante inversión de control, ya que es el codigo del framework el que invoca a mi codigo, y no al revez, como pasaria con una libreria.
+
+2. Los hook methods (metodos gancho) en este ejemplo, son los dos metodos abstractos de la clase Rule, "shouldProcess()" y "process()", ya que el codigo del framework "se engancha" al nuestro mediante estos metodos, los cuales a lo largo del programa el framework va a llamar por inversion de control.
+
+3. El frozen spot del framework presentado seria la clase Rule Engine y el metodo Run de la clase abstracta Rule, ya que no van a poder ser cambiadas por nosotros.

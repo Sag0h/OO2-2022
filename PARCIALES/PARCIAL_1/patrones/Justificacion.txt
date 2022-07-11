@@ -1,0 +1,3 @@
+Utilizo el patron State para representar los Estados en que puede estar una excursion, decidi usar el patron state porque hay que representar estados que van a cambiar en tiempo de ejecucion pero los mismos estados van a decidir en que momento cambian y son estos los que le dicen a la excursion como reaccionar a los mensajes dependiendo el estado actual.
+
+Tambien utilizo un template method en las clases de la gerarquia del patron state para evitar duplicar codigo, definiendo un metodo abstracto getInfo() que solo es visible por las clases de esta gerarquia, y que el metodo "obtenerInformacion()" utiliza para no repetir codigo innecesariamente.
