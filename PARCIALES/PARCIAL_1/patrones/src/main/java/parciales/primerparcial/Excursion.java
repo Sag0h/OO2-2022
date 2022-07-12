@@ -118,7 +118,7 @@ public class Excursion {
 
 	public boolean alcanzoCupoMinimo() {
 		// TODO Auto-generated method stub
-		return this.getListaInscriptos().size() >= this.getCupoMin();
+		return this.listaInscriptos.size() >= this.getCupoMin();
 	}
 
 	public boolean alcanzoCupoMaximo() {
@@ -127,16 +127,16 @@ public class Excursion {
 	}
 	
 	public int getCantidadFaltanteCupoMinimo() {
-		return this.getCupoMin() - this.getListaInscriptos().size();
+		return this.getCupoMin() - this.listaInscriptos.size();
 	}
 	
 	public int getCantidadFaltanteCupoMaximo() {
-		return this.getCupoMax() - this.getListaInscriptos().size();
+		return this.getCupoMax() - this.listaInscriptos.size();
 	}
 
 	public String getMailInscriptos() {
 		String aux = "";
-		this.getListaInscriptos().stream().forEach(u -> aux.concat(u.getEmail() +" \n"));
+		listaInscriptos.stream().forEach(u -> aux.concat(u.getEmail() +" \n"));
 		return aux;
 	}
 	
